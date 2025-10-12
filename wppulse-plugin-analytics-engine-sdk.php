@@ -160,6 +160,7 @@ class WPPulse_SDK {
 						?>
 					</div>
 					<textarea id="wppulse-desc" placeholder="<?php esc_attr_e( 'Optional: tell us more...', self::$cfg['slug'] ); ?>"></textarea>
+					<p style="margin-top: 18px!important;">We share your data with <a href="https://wp-turbo.com/">WP-TURBO</a> to troubleshoot problems & make product improvements. Learn more about how Appsero handles your data.</p>
 				</div>
 				<div class="wppulse-footer">
 					<button type="button" id="wppulse-skip" class="button"><?php esc_html_e( 'Skip & Deactivate', self::$cfg['slug'] ); ?></button>
