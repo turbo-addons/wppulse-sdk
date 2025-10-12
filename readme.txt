@@ -26,7 +26,7 @@ You’ll first set up the main analytics plugin on your server, then install the
 You can download the SDK manually or via Git:
 
 ```bash
-git clone https://github.com/your-repo/wppulse-sdk.git sdk
+git clone https://github.com/turbo-addons/WPPULSE---Plugin-Analytics-Engine-SDK.git
 ```
 
 Then make sure your plugin or theme folder looks like this:
