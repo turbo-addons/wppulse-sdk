@@ -53,6 +53,7 @@ and add this code snippet 👇
 
 // ✅ Include SDK
 require_once __DIR__ . '/sdk/wppulse-plugin-analytics-engine-sdk.php';
+require_once __DIR__ . '/sdk/wppulse-plugin-updater.php';
 
 // ✅ Fetch plugin data automatically
 $plugin_data = get_file_data( __FILE__, [
@@ -61,15 +62,25 @@ $plugin_data = get_file_data( __FILE__, [
     'TextDomain' => 'Text Domain',
 ] );
 
+$plugin_slug = dirname( plugin_basename( __FILE__ ) );
+
+
+if ( class_exists( 'WPPulse_Plugin_Updater' ) ) {
+    new WPPulse_Plugin_Updater(
+        __FILE__,
+        $plugin_slug,
+        $plugin_data['Version'],
+        ''
+    );
+}
+
 // ✅ Initialize SDK
 if ( class_exists( 'WPPulse_SDK' ) ) {
     WPPulse_SDK::init( __FILE__, [
         'name'     => $plugin_data['Name'],
-        'slug'     => sanitize_title( $plugin_data['TextDomain'] ),
+        'slug'     => $plugin_slug,
         'version'  => $plugin_data['Version'],
-
-        // 🧠 IMPORTANT: Use your own endpoint from WPPulse main plugin dashboard
-        'endpoint' => 'https://yourdomain.com/wp-json/wppulse/v1/collect',
+        'endpoint' => '',
     ] );
 }
 ```
