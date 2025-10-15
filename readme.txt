@@ -52,8 +52,8 @@ and add this code snippet 👇
  */
 
 // ✅ Include SDK
-require_once __DIR__ . '/sdk/wppulse-plugin-analytics-engine-sdk.php';
-require_once __DIR__ . '/sdk/wppulse-plugin-updater.php';
+require_once __DIR__ . '/wppulse-sdk/wppulse-plugin-analytics-engine-sdk.php';
+require_once __DIR__ . '/wppulse-sdk/wppulse-plugin-updater.php';
 
 // ✅ Fetch plugin data automatically
 $plugin_data = get_file_data( __FILE__, [
